@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.factory</groupId>
+	<artifactId>cms</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>cms</name>
+	<description>Demo project for Spring Boot</description>
+
+		<!-- springboot依赖 -->
+  <parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>1.5.3.RELEASE</version>
+  </parent>
+	
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+	
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+
+  </properties>
+	
+  <dependencies>
+  	
+  		<!-- 使用html开发页面 author wu 2018/4/13 -->
+  	    <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-web</artifactId>  
+        </dependency>  
+  
+       <dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>  
+       </dependency>  
+  	
+  	<!-- 集成web组件 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+		<exclusions>
+               <exclusion>
+                   <artifactId>log4j-over-slf4j</artifactId>
+                   <groupId>org.slf4j</groupId>
+               </exclusion>
+               <exclusion>
+                   <groupId>org.springframework.boot</groupId>
+                   <artifactId>spring-boot-starter-tomcat</artifactId>
+               </exclusion>
+           </exclusions>
+	</dependency>
+	
+	<!-- 集成aop -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-aop</artifactId>
+	</dependency>
+	
+	
+	<!-- druid数据库连接池 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid-spring-boot-starter</artifactId>
+		<version>1.1.0</version>
+	</dependency>
+	
+	<dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.1.2</version>
+     </dependency>
+	
+	<!-- 集成pgsql -->
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<scope>runtime</scope>
+	</dependency>
+	
+	 <dependency>
+            <groupId>net.sf.mpxj</groupId>
+            <artifactId>mpxj</artifactId>
+            <version>5.6.4</version>
+      </dependency>
+	 
+	
+	<!-- 集成tomact -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	
+	<!-- Java类热部署 将打包好的应用直接替换掉原有的应用，不用关闭或者重启服务器 -->
+	  <dependency> 
+		<groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-devtools</artifactId> 
+		<scope>runtime</scope> 
+	</dependency>  
+	 
+  	<!-- StringUtils,ArrayUtils等等工具类 -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.5</version>
+	</dependency>
+	<!-- collections集合类 -->
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		</dependency>
+	
+	<!-- 将java对象与json互相转化 -->
+	<dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>fastjson</artifactId>
+		<version>1.2.15</version>
+	</dependency>
+	
+	<!-- 格式化时间输出 -->
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		</dependency>
+	<!-- 集成java mail -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-mail</artifactId>
+	</dependency>
+	
+        
+  	<!-- 集成junit -->
+  	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		</dependency>
+	
+	<!-- excel导出 (author chen 2018/4/11)-->
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>3.9</version>
+		<exclusions>
+			<exclusion>
+				<groupId>stax</groupId>
+				<artifactId>stax-poi</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml</artifactId>
+		<version>3.7</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi-ooxml-schemas</artifactId>
+		<version>3.7</version>
+	</dependency>
+	
+	<!-- 日志管理 （author wu 2018/4/11） -->
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+	</dependency>
+	
+    
+  </dependencies>
+  
+ <build>
+	<plugins>
+		<!-- springboot的maven插件配置 -->
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+</build>
+
+</project>
