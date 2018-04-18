@@ -6,8 +6,13 @@
 <style type="text/css">
 	 .form-class{
 		position:absolute; 
-		left:500px; 
+		left:580px; 
 		top:170px
+	}
+	.form-class .button{
+		position:absolute; 
+		left:65px; 
+		top:150px
 	}
 </style>
 </head>
@@ -20,16 +25,18 @@
                 <table border="0">
                     <tr>
                         <td>账号：</td>
-                        <td><input type="text" name="username"></input></td>
+                        <td><input type="text" name="username" required="true"></input></td>
                     </tr>
                     <tr>
                         <td>密码：</td>
-                        <td><input type="password" name="password"></input>
+                        <td><input type="password" name="password" required="true"></input>
                         </td>
                     </tr>
                 </table>
             <br></br>
-                <input type="submit" value="注册" style="color:#BC8F8F"></input>
+            <div class="button">
+                <input type="submit" value="注册" style="color:#BC8F8F ;font-size:20px" ></input>
+            </div>
             </form>
      </div>
 </body>
