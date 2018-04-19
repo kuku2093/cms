@@ -14,14 +14,14 @@
    SELECT 
     	ID,USERNAME,PASSWORD,OPTION,CREATE_TIME
    FROM 
-   		pub_user_factory
+   		pub_user
    WHERE
    	    USERNAME LIKE '%' || #{username,jdbcType=VARCHAR}|| '%'
   </select>
   
   <insert id="insert" parameterType="com.factory.cms.model.User" >
     INSERT INTO
-    	 pub_user_factory
+    	 pub_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,

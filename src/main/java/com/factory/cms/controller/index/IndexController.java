@@ -16,7 +16,7 @@ public class IndexController {
 	@RequestMapping("**/*")
 	public Object index() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index");
+		mv.setViewName("user/index");
 		return mv;
 	}
 	
