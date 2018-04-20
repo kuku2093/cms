@@ -19,4 +19,13 @@
   		pub_product;
   </select>
   
+  <select id="selectById" resultMap="BaseResultMap" parameterType="string" >
+  	select 
+  		product_id,product_name,product_introduce,metal_company_id,product_out_time,
+  		product_period,product_img,is_qualification
+  	FROM 
+  		PUB_PRODUCT
+  	WHERE product_id = #{id,jdbcType=VARCHAR}
+  </select>
+  
 </mapper>

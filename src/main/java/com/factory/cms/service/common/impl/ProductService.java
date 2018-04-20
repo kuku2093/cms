@@ -24,4 +24,10 @@ public class ProductService implements IProductService{
 		return productMapper.selectAll();
 	}
 
+	@Override
+	public Product selectById(String id) {
+		// TODO Auto-generated method stub
+		return productMapper.selectById(id);
+	}
+
 }

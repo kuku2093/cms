@@ -23,14 +23,22 @@ public class ProductController {
 	@Autowired
 	IProductService productService;
 	
-	@RequestMapping("/show")
+	@RequestMapping("/list")
 	@ResponseBody
-	public Object show() {
+	public Object list() {
 		logger.info("===========查询所有的产品===========");
 		List<Product> products = productService.selectAllProduct();
 		return products;
 	}
 	
+	@RequestMapping("/select")
+	@ResponseBody
+	public Object select() {
+		logger.info("===========查询指定的产品===========");
+		String id = "1";
+		Product product = productService.selectById(id);
+		return product;
+	}
 	
 	
 }

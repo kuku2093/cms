@@ -29,7 +29,7 @@ public class JsonResponseAop {
 		/**
 		 * aop请求拦截
 		 * */
-		//环绕通知
+		//环绕通知(使用通配符匹配到Controller包下的所有controller)
 		@Around("execution(* com.factory.cms.controller..*Controller.*(..))")
 		public Object jsonResponseAop(ProceedingJoinPoint proceedingJoinPoint) {
 			JSONObject resObject = new JSONObject();

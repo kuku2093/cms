@@ -11,4 +11,6 @@ public interface IProductService {
 
 	List<Product> selectAllProduct();
 
+	Product selectById(String id);
+
 }

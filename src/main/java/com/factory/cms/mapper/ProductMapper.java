@@ -10,4 +10,7 @@ import com.factory.cms.model.Product;
 public interface ProductMapper {
 
 	List<Product> selectAll();
+
+	Product selectById(String id);
+
 }
