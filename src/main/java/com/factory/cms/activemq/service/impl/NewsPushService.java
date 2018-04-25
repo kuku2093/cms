@@ -23,13 +23,13 @@ public class NewsPushService implements PushService{
 	 /** 
      * 这里是根据MQ配置文件定义的queue来注入的，也就是这里将会把不同的内容推送到不同的queue中 
      */  
-    @Autowired  
+   /* @Autowired  
     @Qualifier("newsServiceQueue")  
-    private Destination destination; 
+    private Destination destination; */
 	
     @Override  
     public void push(final Object info) {  
-        pushExecutor.execute(new Runnable() {  
+        /*pushExecutor.execute(new Runnable() {  
             @Override  
             public void run() {  
                 jmsTemplate.send(destination, new MessageCreator() {  
@@ -39,7 +39,7 @@ public class NewsPushService implements PushService{
                     }  
                 });  
             }             
-        });  
+        });  */
     }  
 
 }
