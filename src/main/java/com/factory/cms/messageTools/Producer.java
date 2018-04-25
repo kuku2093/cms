@@ -1,4 +1,4 @@
-package com.factory.cms.activemq;
+package com.factory.cms.messageTools;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;

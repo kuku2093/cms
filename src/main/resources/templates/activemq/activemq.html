@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+        <meta name="viewport" content="width=device-width, initial-scale=1" />  
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> 
+</head>
+<body>
+	<br/><br/><br/>  
+	新闻标题：<input type="text" id="title" />  
+	新闻内容：<input type="text" id="content" />   
+	 <input type="button" value="推送新闻信息" id="pushNews" /> 
+	 
+	 
+	 <script type="text/javascript">  
+		 $("#pushNews").click(function(){  
+		        var data = {  
+		                title    : $("#title").val(),  
+		                content  : $("#content").val(),  
+		    
+		        };  
+		        ajaxDo("push/news",data);  
+		    });  
+	 
+		 function ajaxDo(url,data){  
+		     $.ajax({  
+		            url:url ,  
+		            type: "get",  
+		            dataType: "json",  
+		            data: data,  
+		            success:function(result){  
+		               if(result.success){  
+		                   var obj = JSON.stringify(result.data);  
+		                   alert(obj);  
+		               }else{  
+		                   alert(result.msg);  
+		               }  
+		            }  
+		        });  
+		}   
+	 
+	 </script>
+</body>
+</html>

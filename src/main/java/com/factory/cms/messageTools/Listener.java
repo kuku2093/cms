@@ -1,4 +1,4 @@
-package com.factory.cms.activemq;
+package com.factory.cms.messageTools;
 
 import javax.jms.JMSException;
 import javax.jms.Message;

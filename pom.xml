@@ -195,7 +195,13 @@
 		<artifactId>lombok</artifactId>
 		<optional>true</optional>
 	</dependency>
-
+	
+	<!-- 引入spring的jms (author chen 2018/4/25) -->
+	<dependency>
+	   <groupId>org.springframework</groupId>
+	   <artifactId>spring-jms</artifactId>
+    <version>${spring.version}</version>
+</dependency>
   </dependencies>
   
  <build>
