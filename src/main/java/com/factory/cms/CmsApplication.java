@@ -17,7 +17,7 @@ import org.springframework.jms.annotation.EnableJms;
  * */
 @SpringBootApplication
 @EnableJms
-@MapperScan("com.factory.cms.mapper")//配置mybatis扫描包 
+@MapperScan("com.factory.cms.*")//配置mybatis扫描包 
 @ServletComponentScan//配置springbootjianting监听器
 public class CmsApplication extends SpringBootServletInitializer{
 	
